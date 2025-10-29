@@ -1,0 +1,95 @@
+extends layouts/default
+block title 
+  | lessons
+block page
+  - var page = 'lessons'
+
+block content
+  .phone_block
+    .container
+      h3 Phone checker
+      .inner_phone_block
+        .form_phone
+          label(for="phone_input") Phone Number
+          input#phone_input(type="text" placeholder="+996 XXX XX-XX-XX")
+          button.btn#phone_button Check number
+          span.checker#phone_result
+
+  .tab_slider
+    .container
+      h3 tab slider
+      .inner_tab_slider
+        .tab_contents_block
+          .tab_content_block
+            h4 Делегирование событий
+            p
+              | В JavaScript делегирование событий - это когда мы используем один обработчик событий для
+              | группы элементов, вместо того чтобы назначать отдельный обработчик каждому элементу. Когда
+              | происходит событие на одном из элементов, оно перехватывается общим обработчиком, который
+              | определяет, какой элемент вызвал событие, и выполняет соответствующие действия.
+          .tab_content_block
+            h4 classList
+            p
+              | classList в JavaScript - это свойство, которое позволяет нам работать с классами элемента
+              | HTML. С помощью classList мы можем добавлять, удалять или проверять наличие классов у
+              | элемента. Допустим, у нас есть элемент на веб-странице, и мы хотим изменить его классы с
+              | помощью JavaScript. Вместо того чтобы обращаться напрямую к атрибуту class, мы можем
+              | использовать свойство classList этого элемента.
+          .tab_content_block
+            h4 add()
+            p
+              | Метод add позволяет добавить новый класс к списку классов элемента. Например,
+              | element.classList.add(&apos;new-class&apos;) добавит класс с именем &quot;new-class&quot; к элементу.
+          .tab_content_block
+            h4 remove()
+            p
+              | Метод remove позволяет удалить класс из списка классов элемента. Например,
+              | element.classList.remove(&apos;old-class&apos;) удалит класс с именем &quot;old-class&quot; из элемента.
+          .tab_content_block
+            h4 contains()
+            p
+              | Метод contains позволяет проверить, содержит ли элемент определенный класс. Он возвращает
+              | true, если класс присутствует, и false, если его нет. Например,
+              | element.classList.contains(&apos;highlight&apos;) вернет true, если у элемента есть класс
+              | &quot;highlight&quot;.
+          .tab_content_items
+            button.tab_content_item.tab_content_item_active Делегирование событий
+            button.tab_content_item Class List
+            button.tab_content_item add()
+            button.tab_content_item remove()
+            button.tab_content_item contains()
+  
+  .converter
+    .container
+      h3 CONVERTER
+      .inner_converter
+        .som
+          label(for="som") Som
+          input#som(type="number")
+        .usd
+          label(for="usd") Usd
+          input#usd(type="number")
+        .eur
+          label(for="eur") Eur
+          input#eur(type="number")
+  
+  .card_switcher
+    .container
+      h3 Card Switcher
+      .inner_card_switcher
+        button#btn-prev.btn prev
+        .card
+        button#btn-next.btn next
+  
+  .weather
+      .container
+        h3 WEATHER
+        .inner_weather
+          div
+            label
+              input.cityName(type="text", placeholder="Найти погоду в...")
+            button#search.btn search
+          div
+            span.city
+            hr
+            span.temp

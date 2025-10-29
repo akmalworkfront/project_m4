@@ -1,0 +1,46 @@
+extends layouts/default
+block title 
+  | Java Script
+block content
+  
+  .main_block
+    .container
+      .inner_main
+        h1
+          strong#js-color JavaScript
+          | - на самом деле очень легко и просто!
+        .colors-buttons
+          button.btn.btn-color
+          button.btn.btn-color
+          button.btn.btn-color
+          button.btn.btn-color
+
+  .slider_block
+    .container
+      .inner_slider
+        .slider
+          button#prev.btn-slide < prev
+
+          include ./includes/slider
+          each item in sliderData.slider
+            .slide.active_slide
+              .slide_card
+                h3=item.title
+                p=item.desc 
+                a(href=item.link, target="_blank") Узнать подробнее
+          button#next.btn-slide next >
+
+
+  .bottle
+    .container
+      .bottle_inner
+        a(href="/monster.html")
+          .bowl
+            .shadow
+            .liquid
+  
+  .block_video
+    .container
+      h3 Полезный ролик про Event Loop
+      .inner_block_video
+        iframe(width="80%", height="450", src="https://www.youtube.com/embed/zDlg64fsQow", title="YouTube video player", allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen)

@@ -1,0 +1,1 @@
+(()=>{var o=document.querySelector("#phone_input"),t=document.querySelector("#phone_button"),e=document.querySelector("#phone_result"),n=/\+996\s\d{3}\s\d{2}\-\d{2}\-\d{2}/;t.onclick=()=>{n.test(o.value)?(e.innerHTML="cool",e.style.color="green"):(e.innerHTML="not cool",e.style.color="red")};})();

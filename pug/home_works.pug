@@ -1,0 +1,36 @@
+extends layouts/default
+block page
+  - var page = 'home_works'
+block title 
+  | Home works
+
+block content
+  .gmail_block
+    .container
+      h3 Homework 1 (part 1)
+      .inner_gmail_block
+        .form_gmail
+          label(for="gmail_input")
+          .input
+            input#gmail_input(type="text" placeholder="your gmail")
+            span.checker#gmail_result
+          button.btn#gmail_button Check gmail
+  .move_block
+    .container
+      h3 Homework 1 (part 2)
+      .inner_move_block
+        .parent_block
+          .child_block
+  .stopwatch
+    .container
+      h3 Homework 2 
+      .time
+        .time_block
+          #seconds.interval 0
+      .time_buttons
+        button#start.btn Start
+        button#stop.btn Stop
+        button#reset.btn Reset
+  .characters
+    .container
+      .characters-list

@@ -1,0 +1,71 @@
+@use '../variables' as *
+
+.modal
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 2
+  background: rgba(0, 0, 0, 0.5)
+  backdrop-filter: blur(10px)
+  opacity: 0
+  pointer-events: none
+  transition: $transition
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &_dialog
+    max-width: 500px
+    transform: scale(0.8)
+    transition-delay: 1s
+    transition: $transition
+    
+  &.open
+    opacity: 1
+    pointer-events: inherit
+
+    .modal_dialog
+      transform: none
+    
+
+  &_content
+    position: relative
+    width: 100%
+    padding: 40px
+    background-color: black
+    border: 2px solid $primary-color
+    border-radius: 4px
+    max-height: 80vh
+    overflow-y: auto
+
+  &_content form
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &_close
+    position: absolute
+    top: 8px
+    right: 14px
+    font-size: 30px
+    color: red
+    opacity: 0.5
+    font-weight: 700
+    border: none
+    background-color: transparent
+    cursor: pointer
+
+  &_title
+    text-align: center
+    font-size: 22px
+    text-transform: uppercase
+    color: white
+
+  &_content label, .btn_min
+    width: 100% !important
+    margin-top: 10px
+
+  &_content input
+    width: 100%

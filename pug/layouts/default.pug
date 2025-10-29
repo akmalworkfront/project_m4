@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  block page  
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 
+      block title
+    link(rel="stylesheet", href="./css/style.css")  
+    if page === 'home_works'
+      link(rel="stylesheet", href="./css/home_works.css")  
+    else if page === 'lessons'
+      link(rel="stylesheet", href="./css/lessons.css")  
+
+  body
+    .wrapper
+      include ../includes/header
+      block content
+
+      include ../includes/footer
+      include ../includes/modal
+    include ../includes/scripts
+  
