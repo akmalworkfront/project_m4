@@ -19,16 +19,24 @@ block content
     .container
       .inner_slider
         .slider
-          button#prev.btn-slide < prev
+          button#prev.btn-slide <
 
           include ./includes/slider
-          each item in sliderData.slider
-            .slide.active_slide
-              .slide_card
-                h3=item.title
-                p=item.desc 
-                a(href=item.link, target="_blank") Узнать подробнее
-          button#next.btn-slide next >
+          .slider__wrap
+            each item in sliderData.slider
+              if(item.active)
+                .slide.active-slide
+                  .slide_card
+                    h3=item.title
+                    p=item.desc 
+                    a(href=item.link, target="_blank") Узнать подробнее
+              else 
+                .slide  
+                  .slide_card
+                    h3=item.title
+                    p=item.desc 
+                    a(href=item.link, target="_blank") Узнать подробнее
+          button#next.btn-slide  >
 
 
   .bottle

@@ -1,0 +1,1 @@
+(()=>{var t=document.querySelector("#start"),o=document.querySelector("#stop"),r=document.querySelector("#reset"),n=document.querySelector("#seconds"),e=0,c=null;t.addEventListener("click",()=>{c||setInterval(()=>{console.log(e++)},1)});o.addEventListener("click",()=>{});console.log(e);})();
