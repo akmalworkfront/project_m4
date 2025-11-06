@@ -4,16 +4,24 @@ const reset = document.querySelector('#reset');
 const timer = document.querySelector('#seconds');
 
 let time = 0;
-let timerId = null;
+let intermediateTime = null;
+
 start.addEventListener('click', () => {
-  if (timerId) return;
-  setInterval(() => {
-    console.log(time++)
-  }, 1);
+  if (intermediateTime) return;
+  intermediateTime = setInterval(() => {
+    time++
+    timer.textContent = time;
+  }, 1000);
 });
 
 stop.addEventListener('click', () => {
-
+  clearInterval(intermediateTime);
+  intermediateTime = null;
 });
 
-console.log(time)
+reset.addEventListener('click', () => {
+  clearInterval(intermediateTime);
+  intermediateTime = null;
+  time = 0;
+  timer.textContent = time; 
+});
