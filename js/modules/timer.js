@@ -24,4 +24,4 @@ reset.addEventListener('click', () => {
   intermediateTime = null;
   time = 0;
   timer.textContent = time; 
-});
+}); 
