@@ -6,22 +6,24 @@ const timer = document.querySelector('#seconds');
 let time = 0;
 let intermediateTime = null;
 
-start.addEventListener('click', () => {
-  if (intermediateTime) return;
-  intermediateTime = setInterval(() => {
-    time++
+if (start && stop && reset && timer) {
+  start.addEventListener('click', () => {
+    if (intermediateTime) return;
+    intermediateTime = setInterval(() => {
+      time++
+      timer.textContent = time;
+    }, 1000);
+  });
+
+  stop.addEventListener('click', () => {
+    clearInterval(intermediateTime);
+    intermediateTime = null;
+  });
+
+  reset.addEventListener('click', () => {
+    clearInterval(intermediateTime);
+    intermediateTime = null;
+    time = 0;
     timer.textContent = time;
-  }, 1000);
-});
-
-stop.addEventListener('click', () => {
-  clearInterval(intermediateTime);
-  intermediateTime = null;
-});
-
-reset.addEventListener('click', () => {
-  clearInterval(intermediateTime);
-  intermediateTime = null;
-  time = 0;
-  timer.textContent = time; 
-}); 
+  });
+}

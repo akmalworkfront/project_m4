@@ -28,8 +28,15 @@
   background: black
   padding: 100px 0
 
+.inner_tab_slider
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  margin-top: 50px
+  gap: 40px
+
 .tab_content_block
-  width: 700px
+  width: 100%
   border: 1px solid $primary-color
   padding: 20px
   border-radius: 10px
@@ -39,19 +46,27 @@
   flex-direction: column
   justify-content: center
   height: 170px
-  display: none
+  position: absolute
+  opacity: 0
+  transition: $transition 
+  top: -20px
 
   & p
     color: white
     margin-top: 10px
     text-align: justify
 
+  &.active
+    opacity: 1
+    top: 0
+    position: relative   
+
 .tab_content_items
   width: 400px
   display: flex
   flex-direction: column
   row-gap: 5px
-
+     
 .tab_content_item
   padding: 10px
   height: 30px
@@ -63,6 +78,11 @@
   cursor: pointer
   display: grid
   place-content: center
+  transition: $transition
+
+  @media (hover: hover) and (pointer: fine)
+    &:hover
+      background-color: $primary-color
 
   &_active
     background: $primary-color
@@ -71,10 +91,8 @@
     border: 1px solid white
 
 .tab_contents_block
-  display: flex
-  justify-content: space-between
-  align-items: center
-  margin-top: 50px
+  position: relative
+  width: 100%
 
 /*------CARD SWITCHER------*/
 

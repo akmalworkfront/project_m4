@@ -1,0 +1,1 @@
+(()=>{var e=new XMLHttpRequest;e.open("GET","js/bio.json");e.setRequestHeader("Content-Type","application/json");e.send();e.onload=()=>{let s=JSON.parse(e.responseText);console.log(`${s.name} ${s.age} \u043B\u0435\u0442 ${s.status}`)};})();

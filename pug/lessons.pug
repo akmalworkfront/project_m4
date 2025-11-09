@@ -21,16 +21,17 @@ block content
       .inner_tab_slider
         .tab_contents_block
           include ./includes/tabs-json
+
           each item in tabsData.tabs
             .tab_content_block(data-name=item.dataAttrKey)
               h4=item.title
               p=item.desc
               
           
-          .tab_content_items
-            
-            each item in tabsData.tabs
-              button.tab_content_item.tab_content_item_active(data-name=item.dataAttrKey)=item.title 
+        .tab_content_items
+          
+          each item in tabsData.tabs
+            button.tab_content_item(data-name=item.dataAttrKey)=item.title 
            
   
   .converter

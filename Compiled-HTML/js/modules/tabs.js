@@ -1,1 +1,1 @@
-(()=>{})();
+(()=>{var a=document.querySelectorAll(".tab_content_item"),c=document.querySelectorAll(".tab_content_block");a.length&&c.length&&(c[0].classList.add("active"),a.forEach((e,l)=>{l===0&&e.classList.add("tab_content_item_active"),e.onclick=i=>{let s=e.getAttribute("data-name");a.forEach(t=>t.classList.remove("tab_content_item_active")),e.classList.add("tab_content_item_active"),c.forEach(t=>{t.getAttribute("data-name")===s?t.classList.add("active"):t.classList.remove("active")})}}));})();
