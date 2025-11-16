@@ -5,3 +5,4 @@ import "./modules/tabs";
 // import "./modules/characters";
 import "./modules/bio";
 import "./modules/converter";
+import "./modules/card_switcher";
